@@ -1,0 +1,1 @@
+{"links":[{"name":"housing_depth","nominal":50.0,"sign":1,"tol_minus":0.1,"tol_plus":0.1},{"name":"shaft_shoulder","nominal":30.0,"sign":-1,"tol_minus":0.05,"tol_plus":0.05},{"name":"bearing_width","nominal":19.0,"sign":-1,"tol_minus":0.04,"tol_plus":0.04}]}

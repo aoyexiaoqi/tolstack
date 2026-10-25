@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tolstack"
+version = "0.1.0"
+description = "公差链（尺寸链）叠加分析：极值法 / RSS / 蒙特卡洛 + 贡献度排序 / Tolerance stack-up analysis: worst case, RSS, Monte Carlo, contribution ranking"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "aoyexiaoqi"}]
+requires-python = ">=3.9"
+keywords = ["tolerance", "stack-up", "dimension-chain", "公差链", "尺寸链", "monte-carlo", "rss", "manufacturing"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Natural Language :: Chinese (Simplified)",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.scripts]
+tolstack = "tolstack.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoyexiaoqi/tolstack"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
