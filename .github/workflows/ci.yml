@@ -11,11 +11,17 @@ permissions:
 jobs:
   test:
     name: pytest (Python ${{ matrix.python-version }})
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          # ubuntu-latest (Ubuntu 26.04) no longer ships a Python 3.9
+          # build for setup-python; run 3.9 on ubuntu-22.04 instead.
+          - os: ubuntu-22.04
+            python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
